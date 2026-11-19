@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AKSH //</title>
+<meta name="description" content="AKSHAY — cybersecurity student. Blue-team mindset, red-team curiosity. Skills, projects, certifications and CTF profiles.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#060a08">
+
+<!-- Open Graph (nice preview when the link is shared) -->
+<meta property="og:title" content="AKSH //">
+<meta property="og:description" content="Cybersecurity student — blue-team mindset, red-team curiosity.">
+<meta property="og:type" content="website">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23060a08'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='17' font-weight='700' fill='%233dff9e' text-anchor='middle'%3E%3E_%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- boot overlay (removed by script.js; hidden if JS is off) -->
+<div class="boot" id="boot" aria-hidden="true">
+  <pre class="boot__lines" id="bootLines"></pre>
+</div>
+<noscript><style>.boot{display:none}</style></noscript>
+
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="brand" href="#top">
+      <span class="brand__tilde">~/</span>Akshay<span class="brand__cursor">_</span>
+    </a>
+
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav__menu" id="navMenu">
+      <a href="#about">about</a>
+      <a href="#skills">skills</a>
+      <a href="#projects">projects</a>
+      <a href="#certs">certs</a>
+      <a href="#profiles">profiles</a>
+      <a href="#contact" class="nav__cta">contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="top">
+    <div class="wrap hero__grid">
+
+      <div class="hero__text">
+        <p class="eyebrow">// open to internships &amp; junior roles</p>
+
+        <p class="termline" aria-hidden="true">
+          <span class="termline__user">Akshay@sec</span><span class="termline__sep">:</span><span class="termline__path">~</span><span class="termline__prompt">$</span>
+          <span id="typed"></span><span class="cursor" id="heroCursor"></span>
+        </p>
+
+        <h1 class="hero__name" id="heroName">Akshay</h1>
+
+        <p class="hero__tagline">
+          I break things in my lab so I can learn how to defend them.
+        </p>
+        <p class="hero__sub">
+          Cybersecurity student · Aspiring SOC analyst · CTF player
+        </p>
+
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#projects">view projects</a>
+          <a class="btn btn--ghost" href="resume.pdf" download>download résumé</a>
+        </div>
+      </div>
+
+      <div class="hero__right">
+
+  <aside class="terminal hero__terminal" id="heroTerminal" aria-label="Interactive portfolio terminal">
+    <div class="terminal__bar">
+      <span class="dot dot--r"></span><span class="dot dot--y"></span><span class="dot dot--g"></span>
+      <span class="terminal__title">Akshay@sec: ~ — interactive shell</span>
+    </div>
+
+    <div class="terminal__screen"
+         id="termScreen"
+         role="log"
+         aria-live="polite"
+         aria-label="Terminal output"></div>
+
+    <div class="terminal__inputline">
+      <label class="sr-only" for="termInput">Terminal input — type a command and press Enter</label>
+      <span class="terminal__prompt-wrap" aria-hidden="true">
+        <span class="term-user">Akshay@sec</span><span class="term-sep">:</span><span class="term-path">~</span><span class="term-dollar">$&nbsp;</span><span class="terminal__echo" id="termEcho"></span><span class="cursor" id="termCursor"></span>
+      </span>
+      <input id="termInput"
+             class="terminal__input"
+             type="text"
+             autocomplete="off"
+             autocapitalize="off"
+             autocorrect="off"
+             spellcheck="false"
+             aria-label="Type a command">
+    </div>
+  </aside>
+
+  <div class="term-chips" aria-label="Quick commands">
+    <button type="button" class="term-chip" data-cmd="help">help</button>
+    <button type="button" class="term-chip" data-cmd="whoami">whoami</button>
+    <button type="button" class="term-chip" data-cmd="skills">skills</button>
+    <button type="button" class="term-chip" data-cmd="certs">certs</button>
+    <button type="button" class="term-chip" data-cmd="projects">projects</button>
+    <button type="button" class="term-chip" data-cmd="contact">contact</button>
+  </div>
+
+</div>
+
+    </div>
+
+<!-- scrolling tool ticker — two counter-scrolling rows, official brand SVGs -->
+<div class="ticker" aria-hidden="true">
+
+  <!-- row 1: scrolls left -->
+  <div class="ticker__row">
+    <div class="ticker__track">
+      <span class="tool"><img class="tool__icon" src="https://cdn.simpleicons.org/target/3dff9e" alt="" width="22" height="22" loading="lazy">nmap</span>
+      <span class="tool"><img class="tool__icon" src="https://cdn.simpleicons.org/wireshark/3dff9e" alt="" width="22" height="22" loading="lazy">wireshark</span>
+      <span class="tool"><img class="tool__icon" src="https://cdn.simpleicons.org/burpsuite/3dff9e" alt="" width="22" height="22" loading="lazy">burp suite</span>
+      <span class="tool"><img class="tool__icon" src="https://cdn.simpleicons.org/metasploit/3dff9e" alt="" width="22" height="22" loading="lazy">metasploit</span>
+      <span class="tool"><img class="tool__icon" src="https://cdn.simpleicons.org/splunk/3dff9e" alt="" width="22" height="22" loading="lazy">splunk</span>
+      <span class="tool"><img class="tool__icon" src="https://cdn.simpleicons.org/kalilinux/3dff9e" alt="" width="22" height="22" loading="lazy">kali linux</span>
+      <span class="tool"><img class="tool__icon" src="https://cdn.simpleicons.org/python/3dff9e" alt="" width="22" height="22" loading="lazy">python</span>
+      <span class="tool"><img class="tool__icon" src="https://cdn.simpleicons.org/gnubash/3dff9e" alt="" width="22" height="22" loading="lazy">bash</span>
+      <span class="tool"><img class="tool__icon" src="https://cdn.simpleicons.org/owasp/3dff9e" alt="" width="22" height="22" loading="lazy">owasp top 10</span>
+
+      <!-- duplicate set for seamless loop — do not remove -->
+      <span class="tool"><img class="tool__icon" src="https://cdn.simpleicons.org/target/3dff9e" alt="" width="22" height="22" loading="lazy">nmap</span>
+      <span class="tool"><img class="tool__icon" src="https://cdn.simpleicons.org/wireshark/3dff9e" alt="" width="22" height="22" loading="lazy">wireshark</span>
+      <span class="tool"><img class="tool__icon" src="https://cdn.simpleicons.org/burpsuite/3dff9e" alt="" width="22" height="22" loading="lazy">burp suite</span>
+      <span class="tool"><img class="tool__icon" src="https://cdn.simpleicons.org/metasploit/3dff9e" alt="" width="22" height="22" loading="lazy">metasploit</span>
+      <span class="tool"><img class="tool__icon" src="https://cdn.simpleicons.org/splunk/3dff9e" alt="" width="22" height="22" loading="lazy">splunk</span>
+      <span class="tool"><img class="tool__icon" src="https://cdn.simpleicons.org/kalilinux/3dff9e" alt="" width="22" height="22" loading="lazy">kali linux</span>
+      <span class="tool"><img class="tool__icon" src="https://cdn.simpleicons.org/python/3dff9e" alt="" width="22" height="22" loading="lazy">python</span>
+      <span class="tool"><img class="tool__icon" src="https://cdn.simpleicons.org/gnubash/3dff9e" alt="" width="22" height="22" loading="lazy">bash</span>
+      <span class="tool"><img class="tool__icon" src="https://cdn.simpleicons.org/owasp/3dff9e" alt="" width="22" height="22" loading="lazy">owasp top 10</span>
+    </div>
+  </div>
+
+  <!-- row 2: scrolls right, tools listed in reverse order -->
+  <div class="ticker__row">
+    <div class="ticker__track ticker__track--reverse">
+      <span class="tool"><img class="tool__icon" src="https://cdn.simpleicons.org/owasp/3dff9e" alt="" width="22" height="22" loading="lazy">owasp top 10</span>
+      <span class="tool"><img class="tool__icon" src="https://cdn.simpleicons.org/gnubash/3dff9e" alt="" width="22" height="22" loading="lazy">bash</span>
+      <span class="tool"><img class="tool__icon" src="https://cdn.simpleicons.org/python/3dff9e" alt="" width="22" height="22" loading="lazy">python</span>
+      <span class="tool"><img class="tool__icon" src="https://cdn.simpleicons.org/kalilinux/3dff9e" alt="" width="22" height="22" loading="lazy">kali linux</span>
+      <span class="tool"><img class="tool__icon" src="https://cdn.simpleicons.org/splunk/3dff9e" alt="" width="22" height="22" loading="lazy">splunk</span>
+      <span class="tool"><img class="tool__icon" src="https://cdn.simpleicons.org/metasploit/3dff9e" alt="" width="22" height="22" loading="lazy">metasploit</span>
+      <span class="tool"><img class="tool__icon" src="https://cdn.simpleicons.org/burpsuite/3dff9e" alt="" width="22" height="22" loading="lazy">burp suite</span>
+      <span class="tool"><img class="tool__icon" src="https://cdn.simpleicons.org/wireshark/3dff9e" alt="" width="22" height="22" loading="lazy">wireshark</span>
+      <span class="tool"><img class="tool__icon" src="https://cdn.simpleicons.org/target/3dff9e" alt="" width="22" height="22" loading="lazy">nmap</span>
+
+      <!-- duplicate set for seamless loop — do not remove -->
+      <span class="tool"><img class="tool__icon" src="https://cdn.simpleicons.org/owasp/3dff9e" alt="" width="22" height="22" loading="lazy">owasp top 10</span>
+      <span class="tool"><img class="tool__icon" src="https://cdn.simpleicons.org/gnubash/3dff9e" alt="" width="22" height="22" loading="lazy">bash</span>
+      <span class="tool"><img class="tool__icon" src="https://cdn.simpleicons.org/python/3dff9e" alt="" width="22" height="22" loading="lazy">python</span>
+      <span class="tool"><img class="tool__icon" src="https://cdn.simpleicons.org/kalilinux/3dff9e" alt="" width="22" height="22" loading="lazy">kali linux</span>
+      <span class="tool"><img class="tool__icon" src="https://cdn.simpleicons.org/splunk/3dff9e" alt="" width="22" height="22" loading="lazy">splunk</span>
+      <span class="tool"><img class="tool__icon" src="https://cdn.simpleicons.org/metasploit/3dff9e" alt="" width="22" height="22" loading="lazy">metasploit</span>
+      <span class="tool"><img class="tool__icon" src="https://cdn.simpleicons.org/burpsuite/3dff9e" alt="" width="22" height="22" loading="lazy">burp suite</span>
+      <span class="tool"><img class="tool__icon" src="https://cdn.simpleicons.org/wireshark/3dff9e" alt="" width="22" height="22" loading="lazy">wireshark</span>
+      <span class="tool"><img class="tool__icon" src="https://cdn.simpleicons.org/target/3dff9e" alt="" width="22" height="22" loading="lazy">nmap</span>
+    </div>
+  </div>
+
+</div>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <h2 class="section__title"><span class="section__hash">##</span> about</h2>
+
+      <div class="about">
+        <div class="about__text">
+          <p>
+            I'm <strong>Akshay</strong>, a cybersecurity student working my way toward a
+            blue-team role. Most of my time goes into hands-on practice: standing up lab
+            environments, tearing apart captured traffic, chasing alerts in a SIEM, and
+            working through CTF rooms until the concepts actually stick.
+          </p>
+          <p>
+            I'm interested in the whole picture — how an attacker moves through a network
+            <em>and</em> how a defender spots them. That's why I spend as much time
+            studying detection engineering and incident response as I do practising
+            offensive techniques.
+          </p>
+          <p>
+            Right now I'm working toward my <strong>CEH</strong>, sharpening my Python and
+            Linux skills, and documenting everything I learn along the way.
+          </p>
+        </div>
+
+        <ul class="facts">
+          <li><span>focus</span> blue team · detection · pentesting</li>
+          <li><span>studying</span> CEH (in progress)</li>
+          <li><span>learning</span> Python · Linux · SIEM</li>
+          <li><span>looking for</span> internships, junior SOC roles</li>
+          <li><span>off the clock</span> CTFs, home lab, write-ups</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SKILLS ================= -->
+  <section class="section" id="skills">
+    <div class="wrap">
+      <h2 class="section__title"><span class="section__hash">##</span> skills</h2>
+      <p class="section__lead">Tools and concepts I work with — built up through coursework, labs and CTFs.</p>
+
+      <div class="skills">
+        <article class="card skill reveal">
+          <h3 class="skill__head"><span class="skill__bracket">[</span> offensive <span class="skill__bracket">]</span></h3>
+          <ul class="tags">
+            <li>Nmap</li><li>Burp Suite</li><li>Metasploit</li><li>Hydra</li>
+            <li>OWASP Top 10</li><li>web app testing</li><li>privilege escalation</li>
+          </ul>
+        </article>
+
+        <article class="card skill reveal">
+          <h3 class="skill__head"><span class="skill__bracket">[</span> defensive <span class="skill__bracket">]</span></h3>
+          <ul class="tags">
+            <li>SIEM (Splunk / Wazuh)</li><li>log analysis</li><li>incident response</li>
+            <li>threat hunting</li><li>IDS/IPS</li><li>MITRE ATT&amp;CK</li>
+          </ul>
+        </article>
+
+        <article class="card skill reveal">
+          <h3 class="skill__head"><span class="skill__bracket">[</span> networking <span class="skill__bracket">]</span></h3>
+          <ul class="tags">
+            <li>TCP/IP</li><li>DNS</li><li>HTTP/S</li><li>firewalls</li>
+            <li>VPN</li><li>Wireshark</li><li>subnetting</li>
+          </ul>
+        </article>
+
+        <article class="card skill reveal">
+          <h3 class="skill__head"><span class="skill__bracket">[</span> systems &amp; cloud <span class="skill__bracket">]</span></h3>
+          <ul class="tags">
+            <li>Linux (Debian / Kali)</li><li>Windows &amp; Active Directory</li><li>Docker</li>
+            <li>bash</li><li>cloud security basics</li>
+          </ul>
+        </article>
+
+        <article class="card skill reveal">
+          <h3 class="skill__head"><span class="skill__bracket">[</span> scripting <span class="skill__bracket">]</span></h3>
+          <ul class="tags">
+            <li>Python</li><li>Bash</li><li>PowerShell</li><li>JavaScript</li><li>SQL</li>
+          </ul>
+        </article>
+
+        <article class="card skill reveal">
+          <h3 class="skill__head"><span class="skill__bracket">[</span> fundamentals <span class="skill__bracket">]</span></h3>
+          <ul class="tags">
+            <li>CIA triad</li><li>hashing &amp; PKI</li><li>TLS</li>
+            <li>encoding</li><li>risk &amp; compliance basics</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+  <section class="section" id="projects">
+    <div class="wrap">
+      <h2 class="section__title"><span class="section__hash">##</span> projects</h2>
+      <p class="section__lead">Labs and write-ups where the theory turns into muscle memory.</p>
+
+      <div class="projects">
+
+        <article class="card project reveal">
+          <div class="project__top">
+            <span class="project__kicker">// home lab</span>
+            <span class="chip chip--demo">demo</span>
+          </div>
+          <h3>Home SOC Lab</h3>
+          <p>
+            A small detection lab running Wazuh, Suricata and Sysmon across Windows and
+            Linux VMs. I replay simulated attacks and map what shows up in the logs back
+            to MITRE ATT&amp;CK techniques.
+          </p>
+          <ul class="tags"><li>Wazuh</li><li>Suricata</li><li>Sysmon</li><li>MITRE ATT&amp;CK</li></ul>
+          <div class="project__links">
+            <a href="#">write-up →</a>
+            <a href="#">repo →</a>
+          </div>
+        </article>
+
+        <article class="card project reveal">
+          <div class="project__top">
+            <span class="project__kicker">// tooling</span>
+            <span class="chip chip--demo">demo</span>
+          </div>
+          <h3>Phishing Email Analyzer</h3>
+          <p>
+            A Python script that parses <code>.eml</code> files, pulls out headers and URLs,
+            checks SPF/DKIM/DMARC results, and dumps indicators into a tidy report.
+          </p>
+          <ul class="tags"><li>Python</li><li>email headers</li><li>SPF/DKIM/DMARC</li><li>IOC extraction</li></ul>
+          <div class="project__links">
+            <a href="#">write-up →</a>
+            <a href="#">repo →</a>
+          </div>
+        </article>
+
+        <article class="card project reveal">
+          <div class="project__top">
+            <span class="project__kicker">// ctf</span>
+            <span class="chip chip--demo">demo</span>
+          </div>
+          <h3>CTF Write-ups</h3>
+          <p>
+            Walkthroughs of the rooms and boxes I've completed — the enumeration path, the
+            rabbit holes, and the lesson at the end. Written so future-me can revise from them.
+          </p>
+          <ul class="tags"><li>TryHackMe</li><li>HackTheBox</li><li>enumeration</li><li>privesc</li></ul>
+          <div class="project__links">
+            <a href="#">read →</a>
+          </div>
+        </article>
+
+        <article class="card project reveal">
+          <div class="project__top">
+            <span class="project__kicker">// tooling</span>
+            <span class="chip chip--demo">demo</span>
+          </div>
+          <h3>Recon Report Generator</h3>
+          <p>
+            A bash + Python wrapper around Nmap that runs a chosen scan profile, parses the
+            XML output and produces a clean Markdown report for lab engagements.
+          </p>
+          <ul class="tags"><li>Bash</li><li>Nmap</li><li>XML parsing</li><li>reporting</li></ul>
+          <div class="project__links">
+            <a href="#">repo →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CERTIFICATIONS ================= -->
+  <section class="section" id="certs">
+    <div class="wrap">
+      <h2 class="section__title"><span class="section__hash">##</span> certs &amp; courses</h2>
+
+      <ol class="timeline">
+        <li class="timeline__item reveal">
+          <div class="timeline__dot"></div>
+          <div class="timeline__body">
+            <div class="timeline__head">
+              <h3>Certified Ethical Hacker (CEH)</h3>
+              <span class="pill pill--wip">in progress</span>
+            </div>
+            <p class="timeline__meta">EC-Council</p>
+            <p>Offensive methodology, reconnaissance, system and web exploitation, and the legal/ethical framing around testing.</p>
+          </div>
+        </li>
+
+        <li class="timeline__item reveal">
+          <div class="timeline__dot"></div>
+          <div class="timeline__body">
+            <div class="timeline__head">
+              <h3>Introduction to Cybersecurity</h3>
+              <span class="pill pill--done">completed</span>
+            </div>
+            <p class="timeline__meta">Cisco Networking Academy</p>
+            <p>Foundations of the threat landscape, common attack types, and defensive principles.</p>
+          </div>
+        </li>
+
+        <li class="timeline__item reveal">
+          <div class="timeline__dot"></div>
+          <div class="timeline__body">
+            <div class="timeline__head">
+              <h3>Further certifications</h3>
+              <span class="pill pill--wip">in progress</span>
+            </div>
+            <p class="timeline__meta">Networking &amp; security fundamentals</p>
+            <p>Working through additional foundational certifications alongside my coursework. Details will land here as they're completed.</p>
+          </div>
+        </li>
+
+        <li class="timeline__item reveal">
+          <div class="timeline__dot"></div>
+          <div class="timeline__body">
+            <div class="timeline__head">
+              <h3>Hands-on learning paths</h3>
+              <span class="pill pill--wip">in progress</span>
+            </div>
+            <p class="timeline__meta">TryHackMe · HackTheBox</p>
+            <p>Guided and self-paced rooms covering networking, Linux, web exploitation and defensive analysis.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ================= PROFILES ================= -->
+  <section class="section" id="profiles">
+    <div class="wrap">
+      <h2 class="section__title"><span class="section__hash">##</span> profiles</h2>
+      <p class="section__lead">Where the practice happens — and where to check my progress.</p>
+
+      <div class="profiles">
+        <a class="card profile-card reveal" href="https://tryhackme.com/p/akshay5" target="_blank" rel="noopener noreferrer">
+          <span class="profile-card__name">TryHackMe</span>
+          <span class="profile-card__handle">@akshay5</span>
+          <span class="profile-card__go">open ↗</span>
+        </a>
+
+        <a class="card profile-card reveal" href="https://app.hackthebox.com/profile/AkshaySokath" target="_blank" rel="noopener noreferrer">
+          <span class="profile-card__name">Hack The Box</span>
+          <span class="profile-card__handle">@AkshaySokath</span>
+          <span class="profile-card__go">open ↗</span>
+        </a>
+
+        <a class="card profile-card reveal" href="https://github.com/Akshay-5" target="_blank" rel="noopener noreferrer">
+          <span class="profile-card__name">GitHub</span>
+          <span class="profile-card__handle">@Akshay-5</span>
+          <span class="profile-card__go">open ↗</span>
+        </a>
+
+        <a class="card profile-card reveal" href="https://www.linkedin.com/in/akshay-sokath" target="_blank" rel="noopener noreferrer">
+          <span class="profile-card__name">LinkedIn</span>
+          <span class="profile-card__handle">/in/akshay-sokath</span>
+          <span class="profile-card__go">open ↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="section section--contact" id="contact">
+    <div class="wrap contact">
+      <h2 class="section__title"><span class="section__hash">##</span> contact</h2>
+      <p class="contact__lead">
+        Got an internship, a junior role, or just want to talk shop? <br> My inbox is open.
+      </p>
+
+      <div class="contact__row">
+        <a class="contact__mail" href="mailto:sokathakshay@gmail.com">sokathakshay@gmail.com</a>
+        <button class="btn btn--ghost btn--sm" id="copyMail" data-mail="sokathakshay@gmail.com">copy</button>
+      </div>
+
+      <p class="contact__note">
+        Please use email for professional inquiries. 
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <p>© <span id="year">2026</span> Akshay · built with plain HTML, CSS &amp; JavaScript</p>
+    <p class="footer__meta">hosted on GitHub Pages · no trackers, no cookies</p>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+<script src="terminal.js" defer></script>
+</body>
+</html>
